@@ -1,6 +1,6 @@
 import { DeleteIcon, EditIcon } from "@chakra-ui/icons";
 import {
-  Box, Button, Flex, Table, Tbody,
+  Box, Button, Image, Flex, Spacer, Table, Tbody,
   Td, Th, Thead,
   Tr, useDisclosure
 } from "@chakra-ui/react";
@@ -37,8 +37,12 @@ const App = () => {
       fontFamily="poppins"
     >
       <Box maxW={800} w="100%" h="100vh" py={10} px={2}>
+        <Box borderWidth='2px'> <text> Escola Tralalá. CNPJ: 11.444.777/0001-52. Endereço: Rua da esquina, n° 18, Salvador/BA</text></Box>
+        <Box boxSize='150px'>
+          <Image src='https://media.discordapp.net/attachments/1040389551753011213/1050094580156080198/PicsArt_12-07-01.58.19.png' alt='Logo tralalá' />
+        </Box>
         <Button colorScheme="blue" onClick={() => [setDataEdit({}), onOpen()]}>
-          NOVO CADASTRO
+          NOVO ALUNO
         </Button>
 
         <Box overflowY="auto" height="100%">
@@ -93,6 +97,7 @@ const App = () => {
           </Table>
         </Box>
       </Box>
+
       {isOpen && (
         <ModalComp
           isOpen={isOpen}
@@ -103,7 +108,7 @@ const App = () => {
           setDataEdit={setDataEdit}
         />
       )}
-     
+
     </Flex>
   );
 };
